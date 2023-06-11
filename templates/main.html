@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Рассчитай налоговый вычет!</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+<body>
+<footer>
+    <div class="name" onclick="location='/'">Калькулятор налогового вычета</div>
+    {% if user is not none %}<div class="history" onclick="location='/download'">Скачать мои расчеты</div>{% endif %}
+</footer>
+<div class="buttons">
+    <a href="standard_deduction"><div class="link">Стандартные налоговые вычеты</div></a>
+    <a href="social_deduction"><div class="link">Социальные налоговые вычеты</div></a>
+    <a href="property_deduction"><div class="link">Имущественные налоговые вычеты</div></a>
+    <a href="/"><div class="link">Профессиональные налоговые вычеты</div></a>
+    <a href="other"><div class="link">Доходы, не подлежащие налогообложению</div></a>
+</div>
+<div class="text">Налоговый вычет — это часть дохода, с которой можно не платить НДФЛ. Еще налоговым вычетом называют
+    возврат части налога, который уже уплачен.
+</div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Доходы, не подлежащие налогообложению</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/standard_deduction.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/static/js/deduction.js"></script>
+</head>
+<body>
+<footer>
+    <div class="name" onclick="location='/'">Калькулятор налогового вычета</div>
+    {% if user is not none %}
+    <div class="history" onclick="location='/download'">Скачать мои расчеты</div>
+    {% endif %}
+</footer>
+<div class="title">
+    <div class="footer ">
+        <p class="text">Доходы, не подлежащие налогообложению</p>
+    </div>
+    <div id="text1" class="">
+        <ul>
+            <li>государственные пособия, за исключением пособий по временной нетрудоспособности (включая пособие по
+                уходу за больным ребенком);
+            </li>
+            <li>пенсии по государственному пенсионному обеспечению, страховые пенсии, фиксированная выплата к страховой
+                пенсии (с учетом повышения фиксированной выплаты к страховой пенсии) и накопительная пенсия, назначаемые
+                в порядке, установленном действующим законодательством, социальные доплаты к пенсиям, выплачиваемые в
+                соответствии с законодательством Российской Федерации и законодательством субъектов Российской
+                Федерации;
+            </li>
+            <li>вознаграждения донорам за сданную кровь, материнское молоко и иную помощь;</li>
+            <li>алименты, получаемые налогоплательщиками;</li>
+            <li>доходы, полученные в виде грантов;</li>
+            <li>стипендии студентов, аспирантов, ординаторов и т.п.;</li>
+            <li>доходы, не превышающие 4000 рублей, полученные по каждому из следующих оснований за налоговый период:
+                <ul>
+                    <li>стоимость подарков, полученных налогоплательщиками от организаций или индивидуальных
+                        предпринимателей;
+                    </li>
+                    <li>стоимость призов в денежной и натуральной формах, полученных налогоплательщиками на конкурсах и
+                        соревнованиях, проводимых в соответствии с решениями Правительства Российской Федерации,
+                        законодательных (представительных) органов государственной власти или представительных органов
+                        местного самоуправления;
+                    </li>
+
+                    <li>суммы материальной помощи, оказываемой работодателями своим работникам, а также бывшим своим
+                        работникам, уволившимся в связи с выходом на пенсию по инвалидности или по возрасту.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+
+        <div class="footer ">
+            <p class="text">Рассчитать</p>
+        </div>
+        <div id="text2" class="">
+            <form method="post">
+                <input type="hidden" name="type" value="Доходы, не подлежащие налогообложению">
+                <div class="row">
+                    <div>Заработная плата:</div>
+                    <input type="number" name="field1" min="0" value="0" step="1" required>
+                </div>
+                <div class="row">
+                    <div>Материальная выплата:</div>
+                    <input type="number" name="field2" min="0" value="0" step="1" required>
+                </div>
+                {% if donation is not none %}
+                <div class="row">
+                    <div>Рассчитанный НДФЛ: {{ donation }} р.</div>
+                </div>
+                {% endif %}
+                <input type="submit" value="Рассчитать">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

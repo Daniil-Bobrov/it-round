@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    background: url(/static/background.png);
+    background-attachment: fixed;
+    background-repeat: round;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "RobotoFlex Regular", sans-serif;
+}
+a:active, /* активная/посещенная ссылка */
+a:hover,  /* при наведении */
+a {
+  text-decoration: none;
+  color: #000;
+}
+footer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+    width: calc(100% - 30px);
+    display: flex;
+    justify-content: space-between;
+    & .name {
+        cursor: pointer;
+    }
+    & .history {
+        cursor: pointer;
+    }
+}
+
+.buttons {
+    z-index: 0;
+}
+.link {
+    font-size: 30px;
+    margin: 10px;
+    padding: 3px;
+    background-color: #F9F4EF;
+    cursor: pointer;
+}
+.text {
+    z-index: 0;
+    color: black;
+    font-size: 50px;
+    width: 60%;
+}
