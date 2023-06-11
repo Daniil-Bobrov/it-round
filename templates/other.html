@@ -11,14 +11,14 @@
     <script language="JavaScript" type="text/javascript" src="/static/js/deduction.js"></script>
 </head>
 <body>
-<header>
+<footer>
     <div class="name" onclick="location='/'">Калькулятор налогового вычета</div>
     {% if user is not none %}
     <div class="history" onclick="location='/download'">Скачать мои расчеты</div>
     {% endif %}
-</header>
+</footer>
 <div class="title">
-    <div class="footer ">
+    <div class="header ">
         <p class="text">Доходы, не подлежащие налогообложению</p>
     </div>
     <div id="text1" class="">
@@ -55,7 +55,7 @@
         </ul>
 
 
-        <div class="footer ">
+        <div class="header ">
             <p class="text">Рассчитать</p>
         </div>
         <div id="text2" class="">

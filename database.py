@@ -96,8 +96,8 @@ class Deduction:
 
 
 if __name__ == "__main__":
-    from app import app, connect_db
-
-    create_db()
-    # DataBase().f()
+    # from app import app, connect_db
+    #
+    # create_db()
+    DataBase().create_user()
     pass

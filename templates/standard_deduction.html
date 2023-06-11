@@ -11,14 +11,14 @@
     <script language="JavaScript" type="text/javascript" src="/static/js/deduction.js"></script>
 </head>
 <body>
-<header>
+<footer>
     <div class="name" onclick="location='/'">Калькулятор налогового вычета</div>
     {% if user is not none %}
     <div class="history" onclick="location='/download'">Скачать мои расчеты</div>
     {% endif %}
-</header>
+</footer>
 <div class="title">
-    <div class="footer footer1">
+    <div class="header footer1">
         <p class="text">В размере 3000 р.</p>
         <div class="btn1">
             <i id="icon1" class="fa fa-chevron-circle-down" aria-hidden="true"></i>
@@ -131,7 +131,7 @@
     </div>
 </div>
 <div class="title">
-    <div class="footer footer2">
+    <div class="header footer2">
         <p class="text">В размере 500 р.</p>
         <div class="btn2">
             <i id="icon2" class="fa fa-chevron-circle-down" aria-hidden="true"></i>
@@ -231,7 +231,7 @@
     </div>
 </div>
 <div class="title">
-    <div class="footer footer3">
+    <div class="header footer3">
         <p class="text">За детей</p>
         <div class="btn3">
             <i id="icon3" class="fa fa-chevron-circle-down" aria-hidden="true"></i>
@@ -272,7 +272,7 @@
                 </ul>
             </li>
         </ul>
-        <div class="footer footer4">
+        <div class="header footer4">
             <p class="text">Рассчитать</p>
             <div class="btn4">
                 <i id="icon4" class="fa fa-chevron-circle-down" aria-hidden="true"></i>

@@ -122,13 +122,10 @@ def other():
                            none=None, )
 
 
-@app.route("/login/", methods=["POST"])
+@app.route("/login/", methods=["GET"])
 def login():
-    logged = True
-    if logged:
-        session["user_login"] = request.form.get("login")
-    fr = request.form.get("from", None)
-    return redirect(f"/{fr + '/' if fr else ''}{'?login_error=True' if not logged else ''}")
+    session["id"] = "3"
+    return redirect("/")
 
 
 @app.route("/logout/", methods=["GET", "POST"])
