@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Социальные налоговые вычеты</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/standard_deduction.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="static/icon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/static/js/deduction.js"></script>
+</head>
+<body>
+<header>
+    <div class="name" onclick="location='/'">Калькулятор налогового вычета</div>
+    {% if user is not none %}<div class="history" onclick="location='/download'">Скачать мои расчеты</div>{% endif %}
+</header>
+<div class="title">
+    <div class="footer ">
+        <p class="text">Имущественный вычет</p>
+    </div>
+    <div id="text1" class="">
+        <ul>
+  <li>в размере доходов, полученных налогоплательщиком в налоговом периоде от продажи жилых домов, квартир, комнат, включая приватизированные жилые помещения, садовых домов или земельных участков или доли (долей) в указанном имуществе, находившихся в собственности налогоплательщика менее минимального предельного срока владения объектом недвижимого имущества, установленного в соответствии со статьей 217.1 настоящего Кодекса, не превышающем в целом 1 000 000 рублей;</li>
+  <li>в размере доходов, полученных налогоплательщиком в налоговом периоде от продажи иного недвижимого имущества, находившегося в собственности налогоплательщика менее минимального предельного срока владения объектом недвижимого имущества, установленного в соответствии со статьей 217.1 настоящего Кодекса, не превышающем в целом 250 000 рублей;</li>
+  <li>в размере доходов, полученных налогоплательщиком в налоговом периоде от продажи иного имущества (за исключением ценных бумаг и имущества, полученного в результате выкупа цифровых финансовых активов и (или) цифровых прав, включающих одновременно цифровые финансовые активы и утилитарные цифровые права), находившегося в собственности налогоплательщика менее трех лет, не превышающем в целом 250 тысяч рублей;</li>
+</ul>
+
+
+        <div class="footer ">
+            <p class="text">Рассчитать</p>
+        </div>
+        <div id="text2" class="">
+            <form method="post">
+                <input type="hidden" name="type" value="Имущественный вычет">
+                <div class="row">
+                    <div>Сумма дохода (нарастающая с момента продажи):</div>
+                    <input type="number" name="field1" min="0" value="0" step="1" required>
+                </div>
+                {% if donation is not none %}
+                <div class="row">
+                    <div>Рассчитанный имущественный вычет: {{ donation }} р.</div>
+                </div>
+                {% endif %}
+                <input type="submit" value="Рассчитать">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
