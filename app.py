@@ -96,7 +96,7 @@ def property_deduction():
 
         if session.get("id", None) is None:
             session["id"] = DataBase().create_user()
-        DataBase().add_deduction(deduction, form["type"], session["id"], form["field1"], form["field2"])
+        DataBase().add_deduction(deduction, form["type"], session["id"], form["field1"])
 
     return render_template("property_deduction.html",
                            donation=donation,
