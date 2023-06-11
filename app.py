@@ -122,19 +122,6 @@ def other():
                            none=None, )
 
 
-@app.route("/login/", methods=["GET"])
-def login():
-    session["id"] = "3"
-    return redirect("/")
-
-
-@app.route("/logout/", methods=["GET", "POST"])
-def logout():
-    session.clear()
-    fr = request.args.get("from", None)
-    return redirect(f"/{fr + '/' if fr else ''}")
-
-
 @app.route('/download')
 def download_file():
     if session.get("id", None) is None: return redirect("/")
