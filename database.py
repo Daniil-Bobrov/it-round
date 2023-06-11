@@ -70,11 +70,6 @@ class DataBase:
             print('Ошибка чтения в БД', e)
             return False
 
-    def f(self):
-        self.__cur.execute(
-            f"""ALTER TABLE deductions ADD COLUMN type"""
-        )
-
 
 class Deduction:
     def __init__(self, deduction_id, database=None):
@@ -95,9 +90,3 @@ class Deduction:
         self.deduction = deduction["deduction"]
 
 
-if __name__ == "__main__":
-    # from app import app, connect_db
-    #
-    # create_db()
-    DataBase().create_user()
-    pass
